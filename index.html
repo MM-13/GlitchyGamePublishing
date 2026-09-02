@@ -14,7 +14,7 @@
 
 <body>
     <!-- 1. HIDDEN IFRAME: Intercepts Google's redirect so users stay on your page -->
-    <iframe name="hidden_iframe" id="hidden_iframe" title="Form submission status" onload="if(submitted) { handleFormSuccess(); }"></iframe>
+    <iframe name="hidden_iframe" id="hidden_iframe" title="Form submission status" onload="if (window.submitted) { handleFormSuccess(); }"></iframe>
 
     <main class="page">
         <section class="content">
@@ -32,13 +32,13 @@
 
             <!-- 2. UPDATED FORM: Added Action, Method, Target, and submit tracking -->
             <form class="notify" id="notifyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerMQ9Ac00tpttxeSCr0DgtSrbxK6U5-hS95fB8mxqJZ1_LOw/formResponse" method="POST" target="hidden_iframe"
-                onsubmit="submitted=true;">
+                onsubmit="showRegistrationProgress();">
                 <!-- 3. UPDATED INPUT: Added the Google entry name attribute -->
                 <input type="email" name="entry.43917760" placeholder="ENTER YOUR EMAIL" required aria-label="Email address">
                 <button type="submit">Notify Me</button>
             </form>
 
-            <div class="status" id="status"></div>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
         </section>
 
         <footer class="footer">Glitchy Game Publishing // 2026</footer>
@@ -47,18 +47,30 @@
     <!-- 4. UPDATED JAVASCRIPT: Manages the iframe loading success cycle -->
     <script>
         // Track whether the form has been physically submitted by the user
-        let submitted = false;
+        window.submitted = false;
+
+        function showRegistrationProgress() {
+            window.submitted = true;
+
+            const status = document.getElementById("status");
+            status.className = "status is-loading";
+            status.textContent = "";
+            status.setAttribute("aria-label", "Registering your email");
+        }
 
         function handleFormSuccess() {
             // Display your custom confirmation message
-            document.getElementById("status").textContent = "SIGNAL RECEIVED — YOU'RE ON THE LIST";
+            const status = document.getElementById("status");
+            status.className = "status";
+            status.textContent = "SIGNAL RECEIVED — YOU'RE ON THE LIST";
+            status.removeAttribute("aria-label");
 
             // Clear the text input box
             const form = document.getElementById("notifyForm");
             form.reset();
 
             // Reset the submission flag so they can enter a different email if needed
-            submitted = false;
+            window.submitted = false;
         }
     </script>
 </body>

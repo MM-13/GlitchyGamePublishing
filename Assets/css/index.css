@@ -193,6 +193,31 @@ iframe#hidden_iframe {
     letter-spacing: .12em;
 }
 
+.status:empty {
+    display: none;
+}
+
+.status.is-loading {
+    display: block;
+    width: min(280px, 80vw);
+    height: 6px;
+    margin: 18px auto 0;
+    border: .5px solid var(--yellow);
+    background: rgba(255, 245, 0, .12);
+    box-shadow: 0 0 12px rgba(255, 245, 0, .35);
+    overflow: hidden;
+}
+
+.status.is-loading::before {
+    content: "";
+    display: block;
+    width: 38%;
+    height: 100%;
+    background: var(--yellow);
+    box-shadow: 0 0 10px var(--yellow);
+    animation: register-progress 1.15s ease-in-out infinite;
+}
+
 .footer {
     position: fixed;
     right: 20px;
@@ -260,6 +285,16 @@ iframe#hidden_iframe {
 
     96% {
         transform: translate(3px, -1px);
+    }
+}
+
+@keyframes register-progress {
+    0% {
+        transform: translateX(-110%);
+    }
+
+    100% {
+        transform: translateX(285%);
     }
 }
 
