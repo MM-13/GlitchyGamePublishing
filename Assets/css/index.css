@@ -282,3 +282,26 @@ iframe#hidden_iframe {
         padding: 12px;
     }
 }
+
+@media (max-height: 800px) {
+    .page {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        width: min(440px, 70vw);
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3.8rem);
+    }
+
+    .subtitle {
+        margin: 14px auto 22px;
+    }
+
+    .footer {
+        bottom: 10px;
+    }
+}
