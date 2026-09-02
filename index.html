@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GG Publishing — Coming Soon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/index.css" />
+</head>
+
+<body>
+    <!-- 1. HIDDEN IFRAME: Intercepts Google's redirect so users stay on your page -->
+    <iframe name="hidden_iframe" id="hidden_iframe" title="Form submission status" onload="if(submitted) { handleFormSuccess(); }"></iframe>
+
+    <main class="page">
+        <section class="content">
+            <div class="logo">
+                <img src="Assets/images/Logo_Square - centerred.png" alt="Glitchy Game Publishing logo">
+            </div>
+
+            <p class="eyebrow">Glitchy Game Incoming</p>
+            <h1>Coming Soon</h1>
+
+            <p class="subtitle">
+                Glitchy Game Publishing is preparing something new. <br>
+                Sign up to receive launch updates.
+            </p>
+
+            <!-- 2. UPDATED FORM: Added Action, Method, Target, and submit tracking -->
+            <form class="notify" id="notifyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerMQ9Ac00tpttxeSCr0DgtSrbxK6U5-hS95fB8mxqJZ1_LOw/formResponse" method="POST" target="hidden_iframe"
+                onsubmit="submitted=true;">
+                <!-- 3. UPDATED INPUT: Added the Google entry name attribute -->
+                <input type="email" name="entry.43917760" placeholder="ENTER YOUR EMAIL" required aria-label="Email address">
+                <button type="submit">Notify Me</button>
+            </form>
+
+            <div class="status" id="status"></div>
+        </section>
+
+        <footer class="footer">Glitchy Game Publishing // 2026</footer>
+    </main>
+
+    <!-- 4. UPDATED JAVASCRIPT: Manages the iframe loading success cycle -->
+    <script>
+        // Track whether the form has been physically submitted by the user
+        let submitted = false;
+
+        function handleFormSuccess() {
+            // Display your custom confirmation message
+            document.getElementById("status").textContent = "SIGNAL RECEIVED — YOU'RE ON THE LIST";
+
+            // Clear the text input box
+            const form = document.getElementById("notifyForm");
+            form.reset();
+
+            // Reset the submission flag so they can enter a different email if needed
+            submitted = false;
+        }
+    </script>
+</body>
+
+
+</html>
