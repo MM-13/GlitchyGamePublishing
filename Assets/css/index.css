@@ -113,12 +113,13 @@ body::before {
     margin: 0 0 14px;
     color: var(--cyan);
     font-size: clamp(.7rem, 2vw, .9rem);
+    font-weight: 400;
     letter-spacing: .45em;
     text-transform: uppercase;
     text-shadow: 0 0 12px var(--cyan);
 }
 
-h1 {
+h2 {
     position: relative;
     margin: 0;
     color: white;
@@ -133,22 +134,22 @@ h1 {
         0 0 25px rgba(255, 255, 255, .45);
 }
 
-h1::before,
-h1::after {
+h2::before,
+h2::after {
     content: attr(data-text);
     position: absolute;
     inset: 0;
     background: transparent;
 }
 
-h1::before {
+h2::before {
     color: var(--pink);
     mix-blend-mode: screen;
     clip-path: inset(0 0 100% 0);
     animation: title-glitch-left 2.8s infinite steps(1);
 }
 
-h1::after {
+h2::after {
     color: var(--cyan);
     mix-blend-mode: screen;
     clip-path: inset(0 0 100% 0);
@@ -401,7 +402,7 @@ iframe#hidden_iframe {
         margin-bottom: 18px;
     }
 
-    h1 {
+    h2 {
         font-size: clamp(2rem, 5vw, 3.8rem);
     }
 

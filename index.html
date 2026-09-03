@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Glitchy Game Publishing is preparing its next game. Join the launch list for updates from GG Publishing." />
+    <meta name="description" content="Glitchy Game Publishing is a Belgian game publisher helping indie game developers bring their games to market through publishing, marketing and community building." />
     <meta name="author" content="Glitchy Game Publishing" />
     <meta name="robots" content="index, follow" />
     <meta name="application-name" content="Glitchy Game Publishing" />
 
-    <title>Glitchy Game Publishing | Coming Soon</title>
+    <title>Glitchy Game Publishing</title>
 
     <link rel="canonical" href="https://glitchygamepublishing.com/" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -18,16 +18,16 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://glitchygamepublishing.com/" />
-    <meta property="og:title" content="Glitchy Game Publishing | Coming Soon" />
-    <meta property="og:description" content="Glitchy Game Publishing is preparing its next game. Join the launch list for updates." />
+    <meta property="og:title" content="Glitchy Game Publishing" />
+    <meta property="og:description" content="Glitchy Game Publishing is a Belgian game publisher helping indie game developers bring their games to market through publishing, marketing and community building." />
     <meta property="og:image" content="https://glitchygamepublishing.com/Assets/images/Logo_Square%20-%20centerred.png" />
     <meta property="og:image:alt" content="Glitchy Game Publishing logo" />
     <meta property="og:site_name" content="Glitchy Game Publishing" />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Glitchy Game Publishing | Coming Soon" />
-    <meta name="twitter:description" content="Glitchy Game Publishing is preparing its next game. Join the launch list for updates." />
+    <meta name="twitter:title" content="Glitchy Game Publishing" />
+    <meta name="twitter:description" content="Glitchy Game Publishing is a Belgian game publisher helping indie game developers bring their games to market through publishing, marketing and community building." />
     <meta name="twitter:image" content="https://glitchygamepublishing.com/Assets/images/Logo_Square%20-%20centerred.png" />
     <meta name="twitter:image:alt" content="Glitchy Game Publishing logo" />
 
@@ -38,7 +38,7 @@
             "name": "Glitchy Game Publishing",
             "url": "https://glitchygamepublishing.com/",
             "logo": "https://glitchygamepublishing.com/Assets/images/Logo_Square%20-%20centerred.png",
-            "description": "Glitchy Game Publishing creates and publishes distinctive games."
+            "description": "Glitchy Game Publishing is a Belgian game publisher preparing for launch. Sign up to receive launch updates."
         }
     </script>
 
@@ -49,7 +49,6 @@
 </head>
 
 <body>
-    <!-- 1. HIDDEN IFRAME: Intercepts Google's redirect so users stay on your page -->
     <iframe name="hidden_iframe" id="hidden_iframe" title="Form submission status" onload="if (window.submitted) { handleFormSuccess(); }"></iframe>
 
     <main class="page">
@@ -58,18 +57,15 @@
                 <img src="Assets/images/Logo_Square - centerred.png" alt="Glitchy Game Publishing logo">
             </div>
 
-            <p class="eyebrow">Glitchy Game Incoming</p>
-            <h1 data-text="Coming Soon">Coming Soon</h1>
+            <h1 class="eyebrow">Glitchy Game Publishing</h1>
+            <h2 data-text="Coming Soon">Coming Soon</h2>
 
             <p class="subtitle">
                 Glitchy Game Publishing is preparing something new. <br>
                 Sign up to receive launch updates.
             </p>
 
-            <!-- 2. UPDATED FORM: Added Action, Method, Target, and submit tracking -->
-            <form class="notify" id="notifyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerMQ9Ac00tpttxeSCr0DgtSrbxK6U5-hS95fB8mxqJZ1_LOw/formResponse" method="POST" target="hidden_iframe"
-                onsubmit="showRegistrationProgress();">
-                <!-- 3. UPDATED INPUT: Added the Google entry name attribute -->
+            <form class="notify" id="notifyForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerMQ9Ac00tpttxeSCr0DgtSrbxK6U5-hS95fB8mxqJZ1_LOw/formResponse" method="POST" target="hidden_iframe" onsubmit="showRegistrationProgress();">
                 <input type="email" name="entry.43917760" placeholder="ENTER YOUR EMAIL" required aria-label="Email address">
                 <button type="submit">Notify Me</button>
             </form>
@@ -80,7 +76,6 @@
         <footer class="footer">Glitchy Game Publishing // 2026</footer>
     </main>
 
-    <!-- 4. UPDATED JAVASCRIPT: Manages the iframe loading success cycle -->
     <script>
         // Track whether the form has been physically submitted by the user
         window.submitted = false;
