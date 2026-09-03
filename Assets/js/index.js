@@ -2,7 +2,7 @@
 window.submitted = false;
 
 // Replace this with the deployed Google Apps Script web app URL.
-const subscriberCountUrl = "https://script.google.com/macros/s/AKfycbxRyDaB9xIDTpr0y-J0BaNTCgm03N-C4QAbd-vS7Iuhh8jIHwdQV4qTNlnFAe4sitfu/exec";
+/*const subscriberCountUrl = "https://script.google.com/macros/s/AKfycbxRyDaB9xIDTpr0y-J0BaNTCgm03N-C4QAbd-vS7Iuhh8jIHwdQV4qTNlnFAe4sitfu/exec";
 
 async function updateSubscriberCount() {
     const countElement = document.getElementById("subscriberCount");
@@ -26,7 +26,7 @@ async function updateSubscriberCount() {
 }
 
 updateSubscriberCount();
-setInterval(updateSubscriberCount, 5000);
+setInterval(updateSubscriberCount, 5000);*/
 
 function showRegistrationProgress() {
     window.submitted = true;
