@@ -205,6 +205,20 @@ h2::after {
     box-shadow: 0 0 18px var(--pink);
 }
 
+.subscriber-count {
+    margin: 16px 0 0;
+    color: var(--cyan);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.subscriber-count span {
+    color: var(--yellow);
+    font-size: .9rem;
+    font-weight: 900;
+}
+
 iframe#hidden_iframe {
     display: none;
 }
