@@ -1,0 +1,12 @@
+{
+	"name": "Glitchy Game Publishing",
+	"short_name": "GG Publishing",
+	"description": "Glitchy Game Publishing creates and publishes distinctive games.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#000000",
+	"theme_color": "#00f6ff",
+	"lang": "en",
+	"icons": []
+}
