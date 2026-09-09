@@ -3,7 +3,8 @@
     --pink: #ff00c8;
     --blue: #273cff;
     --yellow: #fff500;
-    --logo: url("Assets/images/Logo_Square_Centre.png");
+    --darkpink: rgba(255, 0, 200, .45);
+    --logo: url("../images/Logo_Square_Centre_Alpha.png");
 }
 
 * {
@@ -75,39 +76,43 @@ body::before {
 .logo {
     position: relative;
     width: min(620px, 92vw);
-    margin: 0 auto 30px;
+    margin: -100px auto -30px auto;
     animation: float 4s ease-in-out infinite;
 }
 
 .logo img {
     display: block;
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
-    filter: drop-shadow(0 0 8px var(--cyan)) drop-shadow(0 0 20px rgba(255, 0, 200, .45));
+    filter: drop-shadow(0 0 8px var(--cyan)) drop-shadow(0 0 20px var(--darkpink));
 }
 
 .logo::before,
 .logo::after {
     content: "";
     position: absolute;
-    inset: 18% 0;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    aspect-ratio: 1;
     background: var(--logo) center / contain no-repeat;
     pointer-events: none;
     mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
 }
 
 .logo::before {
-    transform: translate(-7px, 2px);
-    opacity: .65;
+    opacity: .72;
+    z-index: -1;
     filter: sepia(1) saturate(12) hue-rotate(125deg);
-    animation: glitch-left 2.2s infinite steps(2);
+    animation: backdrop-glitch-left 2.6s infinite steps(1);
 }
 
 .logo::after {
-    transform: translate(7px, -2px);
-    opacity: .55;
+    opacity: .58;
+    z-index: -1;
     filter: sepia(1) saturate(12) hue-rotate(285deg);
-    animation: glitch-right 1.8s infinite steps(2);
+    animation: backdrop-glitch-right 2.1s infinite steps(1);
 }
 
 .eyebrow {
@@ -205,6 +210,52 @@ h2::after {
     box-shadow: 0 0 18px var(--pink);
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 24px auto 0;
+}
+
+.social-icon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(0, 246, 255, .8);
+    color: var(--cyan);
+    background: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 12px rgba(0, 246, 255, .2);
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease;
+    isolation: isolate;
+}
+
+.social-icon svg {
+    position: relative;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+    transform: translateY(-3px);
+    color: white;
+    border-color: var(--yellow);
+    box-shadow: 0 0 22px rgba(255, 245, 0, .28), 0 0 16px rgba(255, 0, 200, .18);
+}
+
+.social-icon:hover svg,
+.social-icon:focus-visible svg {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px var(--cyan)) drop-shadow(0 0 14px rgba(255, 0, 200, .3));
+}
+
 .subscriber-count {
     margin: 16px 0 0;
     color: var(--cyan);
@@ -275,37 +326,63 @@ iframe#hidden_iframe {
     }
 }
 
-@keyframes glitch-left {
+@keyframes backdrop-glitch-left {
 
     0%,
     88%,
     100% {
-        clip-path: inset(0);
+        clip-path: inset(0 0 0 0);
+        transform: translate(-50%, -50%);
     }
 
     90% {
-        clip-path: inset(20% 0 55%);
+        clip-path: inset(0 0 58% 0);
+        transform: translate(calc(-50% - 10px), calc(-50% + 4px));
     }
 
-    94% {
-        clip-path: inset(65% 0 10%);
+    91% {
+        clip-path: inset(42% 0 0 0);
+        transform: translate(calc(-50% - 4px), calc(-50% - 2px));
+    }
+
+    93% {
+        clip-path: inset(18% 0 28% 0);
+        transform: translate(calc(-50% - 8px), calc(-50% + 2px));
+    }
+
+    96% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(-50%, -50%);
     }
 }
 
-@keyframes glitch-right {
+@keyframes backdrop-glitch-right {
 
     0%,
     82%,
     100% {
-        clip-path: inset(0);
+        clip-path: inset(0 0 0 0);
+        transform: translate(-50%, -50%);
     }
 
-    85% {
-        clip-path: inset(55% 0 25%);
+    84% {
+        clip-path: inset(58% 0 0 0);
+        transform: translate(calc(-50% + 10px), calc(-50% + 2px));
     }
 
-    89% {
-        clip-path: inset(10% 0 70%);
+    87% {
+        clip-path: inset(0 0 40% 0);
+        transform: translate(calc(-50% + 4px), calc(-50% - 5px));
+    }
+
+    90% {
+        clip-path: inset(20% 0 18% 0);
+        transform: translate(calc(-50% + 8px), calc(-50% + 1px));
+    }
+
+    94% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(-50%, -50%);
     }
 }
 
