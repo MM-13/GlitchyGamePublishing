@@ -487,11 +487,13 @@ iframe#hidden_iframe {
 
     .notify input,
     .notify button {
+        font-size: 16px;
         min-height: 48px;
         border: 1px solid var(--cyan);
     }
 
     .notify button {
+        font-size: 16px;
         padding: 12px;
     }
 }
@@ -503,7 +505,8 @@ iframe#hidden_iframe {
 
     .logo {
         /* width: min(440px, 70vw); */
-        margin-bottom: -18px;
+        margin-top: -70px;
+        margin-bottom: -36px;
     }
 
     h2 {
@@ -515,6 +518,7 @@ iframe#hidden_iframe {
     }
 
     .footer {
+        position: relative;
         bottom: 10px;
     }
 }
