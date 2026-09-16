@@ -332,6 +332,10 @@ iframe#hidden_iframe {
 
 .footer {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
     right: calc(20px + env(safe-area-inset-right));
     bottom: calc(18px + env(safe-area-inset-bottom));
     left: calc(20px + env(safe-area-inset-left));
@@ -341,6 +345,23 @@ iframe#hidden_iframe {
     letter-spacing: .15em;
     text-align: center;
     text-transform: uppercase;
+}
+
+.footer a {
+    color: #888;
+    font-size: .6rem;
+    letter-spacing: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .2s ease, text-shadow .2s ease;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(0, 246, 255, .6);
 }
 
 @keyframes float {
