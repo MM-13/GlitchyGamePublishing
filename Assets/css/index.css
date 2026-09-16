@@ -222,6 +222,20 @@ h2::after {
     box-shadow: 0 0 18px var(--pink);
 }
 
+.disclaimer {
+    max-width: 470px;
+    margin: 8px auto 0;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: .62rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.disclaimer a {
+    color: #999;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
